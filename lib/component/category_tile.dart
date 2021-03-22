@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+class CategoryTile extends StatelessWidget {
+  final imageURL, categoryName;
+  CategoryTile({this.imageURL, this.categoryName});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          child: Stack(
+            children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(imageURL,
+                      width: 120, height: 60, fit: BoxFit.cover)),
+              Container(
+                  alignment: Alignment.center,
+                  width: 120,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black26,
+                  ),
+                  child: Text(
+                    categoryName,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ))
+            ],
+          )),
+    );
+  }
+}

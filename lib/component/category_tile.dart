@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CategoryTile extends StatelessWidget {
@@ -13,9 +14,14 @@ class CategoryTile extends StatelessWidget {
           child: Stack(
             children: [
               ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.network(imageURL,
-                      width: 120, height: 60, fit: BoxFit.cover)),
+                borderRadius: BorderRadius.circular(10),
+                child: CachedNetworkImage(
+                  imageUrl: imageURL,
+                  width: 120,
+                  height: 60,
+                  fit: BoxFit.cover,
+                ),
+              ),
               Container(
                   alignment: Alignment.center,
                   width: 120,

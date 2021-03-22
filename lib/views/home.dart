@@ -57,8 +57,12 @@ class _HomeState extends State<Home> {
             Text('News'),
           ],
         ),
-        actions: [IconButton(icon: Icon(Icons.search), onPressed: () {})],
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed: () {}),
+          IconButton(icon: Icon(Icons.filter_list), onPressed: () {}),
+        ],
         elevation: 0,
+        centerTitle: true,
       ),
       body: _loading
           ? Center(child: CircularProgressIndicator())
@@ -90,6 +94,7 @@ class _HomeState extends State<Home> {
                             title: articles[index].title,
                             description: articles[index].description,
                             imageURL: articles[index].urlToImage,
+                            url: articles[index].url,
                           );
                         },
                       ),

@@ -6,6 +6,7 @@ import 'package:flutter_news/helper/data.dart';
 import 'package:flutter_news/helper/news.dart';
 import 'package:flutter_news/models/article_model.dart';
 import 'package:flutter_news/models/category_model.dart';
+import 'package:flutter_news/views/component/data_search.dart';
 
 import 'component/blog_tile.dart';
 import 'component/category_tile.dart';
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
 
   getNews() async {
     News news = News();
-    news.getNews();
+    await news.getNews();
     articles = news.news;
     setState(() {
       _loading = false;
@@ -32,14 +33,15 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
-    categories = getCategories();
     getNews();
+    categories = getCategories();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
         leading: IconButton(
           icon: IconButton(
@@ -58,7 +60,10 @@ class _HomeState extends State<Home> {
           ],
         ),
         actions: [
-          IconButton(icon: Icon(Icons.search), onPressed: () {}),
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () =>
+                  showSearch(context: context, delegate: DataSeach())),
           IconButton(icon: Icon(Icons.filter_list), onPressed: () {}),
         ],
         elevation: 0,

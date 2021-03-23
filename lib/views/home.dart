@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_news/helper/category/category_type.dart';
+import 'package:flutter_news/helper/country/country.dart';
 import 'package:flutter_news/helper/data.dart';
 import 'package:flutter_news/helper/news.dart';
 import 'package:flutter_news/models/article_model.dart';
@@ -23,7 +25,7 @@ class _HomeState extends State<Home> {
 
   getNews() async {
     News news = News();
-    await news.getNews();
+    await news.getNews(Country.germany, CategoryType.topHeadlines);
     articles = news.news;
     setState(() {
       _loading = false;

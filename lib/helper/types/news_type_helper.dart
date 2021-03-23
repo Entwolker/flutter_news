@@ -4,7 +4,7 @@ class NewsTypeHelper {
   static String getString(NewsType type) {
     switch (type) {
       case NewsType.topHeadlines:
-        return 'top-headöines';
+        return 'top-headlines';
       case NewsType.business:
         return NewsType.business.toString();
       case NewsType.entertainment:

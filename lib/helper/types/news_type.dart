@@ -1,4 +1,5 @@
 enum NewsType {
+  topHeadlines,
   business,
   entertainment,
   general,

@@ -3,6 +3,8 @@ import 'package:flutter_news/helper/types/news_type.dart';
 class NewsTypeHelper {
   static String getString(NewsType type) {
     switch (type) {
+      case NewsType.topHeadlines:
+        return 'top-headöines';
       case NewsType.business:
         return NewsType.business.toString();
       case NewsType.entertainment:
@@ -17,8 +19,6 @@ class NewsTypeHelper {
         return NewsType.sports.toString();
       case NewsType.technology:
         return NewsType.technology.toString();
-      default:
-        return 'top-headlines';
     }
   }
 }

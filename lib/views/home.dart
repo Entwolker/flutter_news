@@ -86,6 +86,7 @@ class _HomeState extends State<Home> {
                           return CategoryTile(
                             categoryName: categories[index].categoryName,
                             imageURL: categories[index].imageURL,
+                            categoryType: CategoryType.business,
                           );
                         },
                       ),

@@ -12,12 +12,11 @@ import 'country/country.dart';
 class News {
   List<ArticleModel> news = [];
 
-  Future<void> getNews(
-      @required Country country, @required CategoryType newsType) async {
+  Future<void> getNews(Country country, CategoryType categoryType) async {
     // https://newsapi.org/v2/top-headlines?country=de&apiKey=962815b6029c4d0a8646759591182347
     final String apiKey = '962815b6029c4d0a8646759591182347';
     var url = Uri.parse(
-        'https://newsapi.org/v2/${CategoryTypeHelper.getString(newsType)}?country=${CCHelper.getCC(country)}&apiKey=${apiKey}');
+        'https://newsapi.org/v2/${CategoryTypeHelper.getString(categoryType)}?country=${CCHelper.getCC(country)}&apiKey=${apiKey}');
 
     var response = await http.get(url);
 

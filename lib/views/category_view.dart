@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_news/models/category_type.dart';
-import 'package:flutter_news/models/country.dart';
+import 'package:flutter_news/helper/category/category_type.dart';
+import 'package:flutter_news/helper/country/country.dart';
 import 'package:flutter_news/helper/news.dart';
 import 'package:flutter_news/models/article_model.dart';
 
 class CategoryView extends StatefulWidget {
-  final CategoryType newsType;
-  CategoryView({this.newsType});
+  final CategoryType categoryType;
+  CategoryView({this.categoryType});
 
   @override
   _CategoryViewState createState() => _CategoryViewState();
@@ -18,7 +18,7 @@ class _CategoryViewState extends State<CategoryView> {
 
   getNews() async {
     News news = News();
-    await news.getNews(Country.germany, widget.newsType);
+    await news.getNews(Country.germany, widget.categoryType);
     articles = news.news;
     setState(() {
       _loading = false;
@@ -36,7 +36,7 @@ class _CategoryViewState extends State<CategoryView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.newsType.toString().toUpperCase()),
+        title: Text(widget.categoryType.toString().toUpperCase()),
       ),
       body: Container(),
     );

@@ -1,4 +1,4 @@
-import 'package:flutter_news/models/country.dart';
+import 'package:flutter_news/helper/country/country.dart';
 
 class CCHelper {
   static String getCC(Country country) {

@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/helper/category/category_type.dart';
 import 'package:flutter_news/views/category_view.dart';
 
 class CategoryTile extends StatelessWidget {
   final imageURL, categoryName;
-  CategoryTile({this.imageURL, this.categoryName});
+  final CategoryType categoryType;
+  CategoryTile({this.imageURL, this.categoryName, this.categoryType});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class CategoryTile extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => CategoryView(
-                    newsType: categoryName,
+                    categoryType: categoryType,
                   ))),
       child: Container(
           margin: EdgeInsets.symmetric(horizontal: 10),

@@ -6,19 +6,19 @@ class CategoryTypeHelper {
       case CategoryType.topHeadlines:
         return 'top-headlines';
       case CategoryType.business:
-        return CategoryType.business.toString();
+        return 'business';
       case CategoryType.entertainment:
-        return CategoryType.entertainment.toString();
+        return 'entertainment';
       case CategoryType.general:
-        return CategoryType.general.toString();
+        return 'general';
       case CategoryType.health:
-        return CategoryType.health.toString();
+        return 'health';
       case CategoryType.science:
-        return CategoryType.science.toString();
+        return 'science';
       case CategoryType.sports:
-        return CategoryType.sports.toString();
+        return 'sports';
       case CategoryType.technology:
-        return CategoryType.technology.toString();
+        return 'technology';
     }
   }
 }
